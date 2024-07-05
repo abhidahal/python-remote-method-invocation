@@ -7,15 +7,16 @@ logging.basicConfig(level=logging.INFO)
 @Pyro5.api.expose
 class Calculator:
     def add(self, a, b):
+
         try:
-            return a + b
+            return int(a) + int(b)
         except Exception as e:
             logging.error(f"Error in add method: {e}")
             raise
 
     def subtract(self, a, b):
         try:
-            return a - b
+            return int(a) - int(b)
         except Exception as e:
             logging.error(f"Error in subtract method: {e}")
             raise

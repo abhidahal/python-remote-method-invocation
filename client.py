@@ -13,9 +13,12 @@ def main():
         calculator = Pyro5.api.Proxy(uri)
 
         try:
+
+            a = input("Enter number :")
+            b = input("Enter number :")
             # Call remote methods
-            result_add = calculator.add(10, 5)
-            result_subtract = calculator.subtract(10, 5)
+            result_add = calculator.add(a,b)
+            result_subtract = calculator.subtract(a,b)
 
             logging.info(f"Addition result: {result_add}")
             logging.info(f"Subtraction result: {result_subtract}")
